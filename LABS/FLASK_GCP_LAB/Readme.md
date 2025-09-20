@@ -205,7 +205,7 @@ https://customer-churn-app-h52fnzgp4a-ue.a.run.app
 }
 ```
 
-## 🧪 Testing
+## Testing
 
 ### API Testing with cURL
 ```bash
