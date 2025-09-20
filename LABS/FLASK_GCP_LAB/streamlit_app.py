@@ -64,11 +64,11 @@ if st.button('Predict Churn Risk', type='primary', use_container_width=True):
             
             # Main prediction with color coding
             if result['raw_prediction'] == 1:
-                st.error(f"⚠️ **Churn Prediction: {result['will_churn']}**")
-                risk_color = "🔴" if result['churn_risk'] == 'High' else "🟡"
+                st.error(f" **Churn Prediction: {result['will_churn']}**")
+                risk_color = "" if result['churn_risk'] == 'High' else ""
             else:
                 st.success(f"**Churn Prediction: {result['will_churn']}**")
-                risk_color = "🟢"
+                risk_color = ""
             
             st.markdown(f"### {risk_color} Risk Level: **{result['churn_risk']}**")
             
