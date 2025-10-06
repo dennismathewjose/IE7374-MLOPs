@@ -1,0 +1,46 @@
+# Bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+*.env
+
+
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+# macOS specific
+.DS_Store
+
+# OS generated files
+Thumbs.db
+
+# Docker artifacts (optional)
+*.log
+*.tar
+*.gz
+
+# Output CSV files (optional, you may want to keep these)
+top5_happy_generous_*.csv
+world-happiness-report-2021_*.csv
+# Pytest cache
+.pytest_cache/
+.cache/
+
+# GitHub Actions artifacts (optional)
+*.zip
+artifacts/
+
+# VS Code dev container settings (optional)
+.devcontainer/
+
+# Test data or temp files
+test_outputs/
+*.tmp
