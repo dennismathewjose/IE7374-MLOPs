@@ -1,0 +1,22 @@
+{
+  "index_patterns": ["data-quality-*"],
+  "priority": 100,
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0
+    },
+    "mappings": {
+      "properties": {
+        "@timestamp": { "type": "date" },
+        "dataset_name": { "type": "keyword" },
+        "missing_values_count": { "type": "integer" },
+        "outliers_count": { "type": "integer" },
+        "duplicate_rows": { "type": "integer" },
+        "schema_violations": { "type": "integer" },
+        "data_drift_score": { "type": "float" },
+        "feature_stats": { "type": "object" }
+      }
+    }
+  }
+}

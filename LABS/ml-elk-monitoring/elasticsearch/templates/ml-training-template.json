@@ -1,0 +1,25 @@
+{
+  "index_patterns": ["ml-training-*"],
+  "priority": 100,
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0
+    },
+    "mappings": {
+      "properties": {
+        "@timestamp": { "type": "date" },
+        "model_name": { "type": "keyword" },
+        "epoch": { "type": "integer" },
+        "batch": { "type": "integer" },
+        "loss": { "type": "float" },
+        "accuracy": { "type": "float" },
+        "validation_loss": { "type": "float" },
+        "validation_accuracy": { "type": "float" },
+        "learning_rate": { "type": "float" },
+        "training_time_seconds": { "type": "float" },
+        "hyperparameters": { "type": "object" }
+      }
+    }
+  }
+}

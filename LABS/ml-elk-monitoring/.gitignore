@@ -1,0 +1,32 @@
+# Python
+venv/
+env/
+*.pyc
+__pycache__/
+.Python
+*.egg-info/
+dist/
+build/
+
+# ELK Data
+es_ml_data/
+*.log
+ml-logs/*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Environment files
+.env
+.env.local
+
+# Elasticsearch data
+elasticsearch/data/
+
+# Temporary files
+*.tmp
+*.bak

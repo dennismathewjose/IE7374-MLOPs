@@ -1,0 +1,38 @@
+# Kibana configuration for ML monitoring
+server.host: "0.0.0.0"
+server.port: 5601
+server.name: "ml-monitoring-kibana"
+server.shutdownTimeout: "5s"
+
+# Elasticsearch connection
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+elasticsearch.requestTimeout: 30000
+elasticsearch.pingTimeout: 30000
+
+# Monitoring
+monitoring.ui.container.elasticsearch.enabled: true
+monitoring.ui.enabled: true
+
+# Performance settings
+elasticsearch.maxSockets: 1024
+elasticsearch.compression: true
+
+# Disable telemetry
+telemetry.enabled: false
+telemetry.optIn: false
+
+# ML-specific settings
+xpack.encryptedSavedObjects.encryptionKey: "ml-monitoring-key-32-characters!!"
+xpack.reporting.encryptionKey: "ml-reporting-key-32-characters!!"
+xpack.security.encryptionKey: "ml-security-key-32-characters!!!"
+
+# Logging
+logging:
+  appenders:
+    console:
+      type: console
+      layout:
+        type: pattern
+  root:
+    level: info
+    appenders: [console]

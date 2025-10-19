@@ -1,0 +1,123 @@
+{
+  "index_patterns": ["ml-metrics-*", "model-performance-*"],
+  "priority": 100,
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "refresh_interval": "5s",
+      "index": {
+        "codec": "best_compression",
+        "query": {
+          "default_field": ["error_message", "model_name"]
+        }
+      }
+    },
+    "mappings": {
+      "properties": {
+        "@timestamp": { 
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+        },
+        "model_name": { 
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "model_version": { 
+          "type": "keyword",
+          "ignore_above": 50
+        },
+        "prediction_confidence": { 
+          "type": "float" 
+        },
+        "inference_time_ms": { 
+          "type": "float" 
+        },
+        "prediction_class": { 
+          "type": "keyword",
+          "ignore_above": 100
+        },
+        "true_label": { 
+          "type": "keyword",
+          "ignore_above": 100
+        },
+        "data_quality_score": { 
+          "type": "float" 
+        },
+        "cpu_usage": { 
+          "type": "float" 
+        },
+        "memory_usage_mb": { 
+          "type": "float" 
+        },
+        "gpu_usage": { 
+          "type": "float" 
+        },
+        "environment": { 
+          "type": "keyword",
+          "ignore_above": 50
+        },
+        "region": { 
+          "type": "keyword",
+          "ignore_above": 50
+        },
+        "error_message": { 
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "feature_values": { 
+          "type": "object",
+          "enabled": true
+        },
+        "request_id": {
+          "type": "keyword",
+          "ignore_above": 100
+        },
+        "user_id": {
+          "type": "keyword",
+          "ignore_above": 100
+        },
+        "model_endpoint": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "prediction_probabilities": {
+          "type": "float"
+        },
+        "feature_importance": {
+          "type": "object"
+        }
+      },
+      "dynamic_templates": [
+        {
+          "strings_as_keywords": {
+            "match_mapping_type": "string",
+            "match_pattern": "regex",
+            "match": ".*_id$",
+            "mapping": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        {
+          "metrics_as_floats": {
+            "match_pattern": "regex",
+            "match": ".*(latency|time_ms|score|confidence|usage).*",
+            "mapping": {
+              "type": "float"
+            }
+          }
+        }
+      ]
+    },
+    "aliases": {
+      "ml-metrics-current": {}
+    }
+  }
+}

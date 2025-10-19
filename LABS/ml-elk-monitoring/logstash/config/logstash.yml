@@ -1,0 +1,16 @@
+# Logstash configuration for ML pipeline
+http.host: "0.0.0.0"
+pipeline.ecs_compatibility: disabled
+pipeline.workers: 2
+pipeline.batch.size: 125
+config.reload.automatic: true
+config.reload.interval: 30s
+
+# Monitoring
+xpack.monitoring.enabled: true
+xpack.monitoring.elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+# Queue settings for ML workloads
+queue.type: memory
+queue.max_bytes: 1gb
+queue.checkpoint.writes: 1024
