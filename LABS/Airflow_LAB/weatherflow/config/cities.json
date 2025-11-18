@@ -1,0 +1,29 @@
+{
+  "cities": [
+    {
+      "name": "Boston",
+      "country": "US",
+      "priority": "high"
+    },
+    {
+      "name": "New York",
+      "country": "US",
+      "priority": "high"
+    },
+    {
+      "name": "Chicago",
+      "country": "US",
+      "priority": "medium"
+    },
+    {
+      "name": "San Francisco",
+      "country": "US",
+      "priority": "high"
+    },
+    {
+      "name": "Seattle",
+      "country": "US",
+      "priority": "medium"
+    }
+  ]
+}
