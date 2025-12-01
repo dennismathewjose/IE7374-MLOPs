@@ -1,4 +1,4 @@
-# TFDV Mini-MLOps Lab
+# TFDV MLOps Lab
 
 This lab simulates a professional Data Validation workflow using TensorFlow Data Validation (TFDV).
 
