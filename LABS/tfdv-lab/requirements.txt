@@ -1,0 +1,12 @@
+# Core TFX and TensorFlow (Pinned for compatibility)
+tensorflow-data-validation
+tensorflow
+
+# Data Processing
+pandas
+# TFDV is sensitive to pyarrow versions; this matches TFDV 1.15.1
+pyarrow
+# Utilities
+joblib
+matplotlib
+pyyaml

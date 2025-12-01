@@ -1,0 +1,34 @@
+venv/
+.env
+.env.local
+*.log
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+# Jupyter Notebooks
+.ipynb_checkpoints/
+# OS
+.DS_Store
+Thumbs.db
+# Docker
+.dockerignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Data files
+*.csv
