@@ -1,4 +1,4 @@
-# FLASK_GCP_LAB - Customer Churn Prediction System
+# FLASK-GCP-LAB - Customer Churn Prediction System
 
 ## Project Overview
 
